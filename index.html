@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nick & Michele's Bonkers 2025 Collection Schedule</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                width: 80%;
+                max-width: 1200px;
+                margin: 20px auto;
+            }
+            .table-wrapper {
+                flex: 0 0 80%;
+                margin-right: 20px;
+            }
+            .key {
+                flex: 0 0 15%;
+                font-size: 14px;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td, th {
+                border: 1px solid #ADD8E6;
+                padding: 5px;
+                text-align: center;
+                position: relative;
+                cursor: pointer;
+            }
+            th {
+                background-color: #ADD8E6;
+                color: #4B4B4B;
+                font-weight: bold;
+            }
+            th, td:first-child {
+                background-color: #D3D3D3 !important; /* Light Grey */
+                color: #4B4B4B !important; /* Darker text for contrast */
+                font-weight: bold;
+            }
+
+            .title {
+                margin: 20px 0;
+                font-size: 24px;
+                font-weight: bold;
+                color: #4B4B4B;
+                cursor: pointer;
+            }
+            .color-bar {
+                display: flex;
+                width: 100%;
+                height: 8px;
+                margin-top: 3px;
+            }
+            .subbox {
+                flex: 1;
+                height: 100%;
+            }
+            /* Color scheme */
+            .holiday { background-color: #87CEFA; } /* Light Blue */
+            .trash { background-color: #0000FF; } /* Dark Blue */
+            .recycling { background-color: #8B0000; } /* Dark Red */
+            .yardwaste { background-color: #FFA07A; } /* Light Red */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+            .modal-content {
+                background-color: white;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 50%;
+                text-align: center;
+                font-size: 16px;
+            }
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .close:hover, .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .key-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .key-color {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+
+            .text-holiday  { color: #87CEFA; font-weight: bold; }   /* Light Blue */
+            .text-trash { color: #0000FF; font-weight: bold; }  /* Dark Blue */
+            .text-recycling { color: #8B0000; font-weight: bold; } /* Dark Red */
+            .text-yardwaste { color: #FFA07A; font-weight: bold; } /* Light Red */
+        </style>
+    </head>
+
+<body>
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <div style="text-align: left;">
+        <h3>Refuse Collection Is Confusing!</h3>
+        <p>Tracking refuse collection in our neighborhood is difficult. Trash, recycling, and yard waste each follow different rules for holiday shifts, and they don’t always observe the same holidays.</p> 
+        <p>Each cell represents a single day in 2025, with holidays and collection days color-coded. Below the date, a bar visually represents scheduled collections:                 
+        <ul>
+            <li><span class="key-color holiday"></span> <strong>Light Blue</strong> → Holidays</li>
+            <li><span class="key-color trash"></span> <strong>Dark Blue</strong> → Trash</li>
+            <li><span class="key-color recycling"></span> <strong>Dark Red</strong> → Recycling</li>
+            <li><span class="key-color yardwaste"></span> <strong>Light Red</strong> → Yard Waste</li>
+        </ul> 
+        <p>If multiple collections fall on the same day, the bar is divided proportionally to show each collection type. If only one collection type occurs, the entire bar is filled with that color.</p> 
+        <p>Click any cell to view additional details. Click the title at the top to reopen this explanation.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="title" id="pageTitle"><u>Nick & Michele's Bonkers 2025 Collection Schedule</u></div>
+  
+  <div class="container">
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Week</th>
+          <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">1</td>
+          <td style="text-align: center; color: #E0E0E0;" title=""> </td>
+          <td style="text-align: center; color: #E0E0E0;" title=""> </td>
+          <td style="text-align: center; color: #E0E0E0;" title=""> </td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Jan-01-2025&#10;Day: Wednesday&#10;Holiday: New Year's Day">Jan-01</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-02-2025&#10;Day: Thursday">Jan-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-03-2025&#10;Day: Friday">Jan-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-04-2025&#10;Day: Saturday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jan-04</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">2</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-05-2025&#10;Day: Sunday">Jan-05</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-06-2025&#10;Day: Monday">Jan-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-07-2025&#10;Day: Tuesday">Jan-07</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jan-08-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Jan-08</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-09-2025&#10;Day: Thursday">Jan-09</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jan-10-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Jan-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-11-2025&#10;Day: Saturday">Jan-11</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">3</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-12-2025&#10;Day: Sunday">Jan-12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-13-2025&#10;Day: Monday">Jan-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-14-2025&#10;Day: Tuesday">Jan-14</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jan-15-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Jan-15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-16-2025&#10;Day: Thursday">Jan-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-17-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jan-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-18-2025&#10;Day: Saturday">Jan-18</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">4</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-19-2025&#10;Day: Sunday">Jan-19</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Jan-20-2025&#10;Day: Monday&#10;Holiday: Martin Luther King Jr. Day">Jan-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-21-2025&#10;Day: Tuesday">Jan-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-22-2025&#10;Day: Wednesday">Jan-22</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jan-23-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Jan-23</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jan-24-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Jan-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-25-2025&#10;Day: Saturday">Jan-25</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">5</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-26-2025&#10;Day: Sunday">Jan-26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-27-2025&#10;Day: Monday">Jan-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-28-2025&#10;Day: Tuesday">Jan-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-29-2025&#10;Day: Wednesday">Jan-29</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jan-30-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Jan-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jan-31-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jan-31</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-01-2025&#10;Day: Saturday">Feb-01</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">6</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-02-2025&#10;Day: Sunday">Feb-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-03-2025&#10;Day: Monday">Feb-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-04-2025&#10;Day: Tuesday">Feb-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-05-2025&#10;Day: Wednesday">Feb-05</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Feb-06-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Feb-06</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Feb-07-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Feb-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-08-2025&#10;Day: Saturday">Feb-08</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">7</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-09-2025&#10;Day: Sunday">Feb-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-10-2025&#10;Day: Monday">Feb-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-11-2025&#10;Day: Tuesday">Feb-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-12-2025&#10;Day: Wednesday">Feb-12</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Feb-13-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Feb-13</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Feb-14-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Feb-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-15-2025&#10;Day: Saturday">Feb-15</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">8</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-16-2025&#10;Day: Sunday">Feb-16</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Feb-17-2025&#10;Day: Monday&#10;Holiday: Washington's Birthday">Feb-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-18-2025&#10;Day: Tuesday">Feb-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-19-2025&#10;Day: Wednesday">Feb-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-20-2025&#10;Day: Thursday">Feb-20</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Feb-21-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Feb-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-22-2025&#10;Day: Saturday">Feb-22</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">9</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-23-2025&#10;Day: Sunday">Feb-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-24-2025&#10;Day: Monday">Feb-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-25-2025&#10;Day: Tuesday">Feb-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-26-2025&#10;Day: Wednesday">Feb-26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-27-2025&#10;Day: Thursday">Feb-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Feb-28-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Feb-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-01-2025&#10;Day: Saturday">Mar-01</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-02-2025&#10;Day: Sunday">Mar-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-03-2025&#10;Day: Monday">Mar-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-04-2025&#10;Day: Tuesday">Mar-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-05-2025&#10;Day: Wednesday">Mar-05</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-06-2025&#10;Day: Thursday">Mar-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-07-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Mar-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-08-2025&#10;Day: Saturday">Mar-08</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-09-2025&#10;Day: Sunday">Mar-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-10-2025&#10;Day: Monday">Mar-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-11-2025&#10;Day: Tuesday">Mar-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-12-2025&#10;Day: Wednesday">Mar-12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-13-2025&#10;Day: Thursday">Mar-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-14-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Mar-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-15-2025&#10;Day: Saturday">Mar-15</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-16-2025&#10;Day: Sunday">Mar-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-17-2025&#10;Day: Monday">Mar-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-18-2025&#10;Day: Tuesday">Mar-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-19-2025&#10;Day: Wednesday">Mar-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-20-2025&#10;Day: Thursday">Mar-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-21-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Mar-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-22-2025&#10;Day: Saturday">Mar-22</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-23-2025&#10;Day: Sunday">Mar-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-24-2025&#10;Day: Monday">Mar-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-25-2025&#10;Day: Tuesday">Mar-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-26-2025&#10;Day: Wednesday">Mar-26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-27-2025&#10;Day: Thursday">Mar-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-28-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Mar-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-29-2025&#10;Day: Saturday">Mar-29</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-30-2025&#10;Day: Sunday">Mar-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Mar-31-2025&#10;Day: Monday">Mar-31</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-01-2025&#10;Day: Tuesday">Apr-01</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-02-2025&#10;Day: Wednesday">Apr-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-03-2025&#10;Day: Thursday">Apr-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-04-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Apr-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-05-2025&#10;Day: Saturday">Apr-05</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-06-2025&#10;Day: Sunday">Apr-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-07-2025&#10;Day: Monday">Apr-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-08-2025&#10;Day: Tuesday">Apr-08</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-09-2025&#10;Day: Wednesday">Apr-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-10-2025&#10;Day: Thursday">Apr-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-11-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Apr-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-12-2025&#10;Day: Saturday">Apr-12</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-13-2025&#10;Day: Sunday">Apr-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-14-2025&#10;Day: Monday">Apr-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-15-2025&#10;Day: Tuesday">Apr-15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-16-2025&#10;Day: Wednesday">Apr-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-17-2025&#10;Day: Thursday">Apr-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-18-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Apr-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-19-2025&#10;Day: Saturday">Apr-19</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-20-2025&#10;Day: Sunday">Apr-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-21-2025&#10;Day: Monday">Apr-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-22-2025&#10;Day: Tuesday">Apr-22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-23-2025&#10;Day: Wednesday">Apr-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-24-2025&#10;Day: Thursday">Apr-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-25-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Apr-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-26-2025&#10;Day: Saturday">Apr-26</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-27-2025&#10;Day: Sunday">Apr-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-28-2025&#10;Day: Monday">Apr-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-29-2025&#10;Day: Tuesday">Apr-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Apr-30-2025&#10;Day: Wednesday">Apr-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-01-2025&#10;Day: Thursday">May-01</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-02-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">May-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-03-2025&#10;Day: Saturday">May-03</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-04-2025&#10;Day: Sunday">May-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-05-2025&#10;Day: Monday">May-05</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-06-2025&#10;Day: Tuesday">May-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-07-2025&#10;Day: Wednesday">May-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-08-2025&#10;Day: Thursday">May-08</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-09-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">May-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-10-2025&#10;Day: Saturday">May-10</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-11-2025&#10;Day: Sunday">May-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-12-2025&#10;Day: Monday">May-12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-13-2025&#10;Day: Tuesday">May-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-14-2025&#10;Day: Wednesday">May-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-15-2025&#10;Day: Thursday">May-15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-16-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">May-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-17-2025&#10;Day: Saturday">May-17</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-18-2025&#10;Day: Sunday">May-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-19-2025&#10;Day: Monday">May-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-20-2025&#10;Day: Tuesday">May-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-21-2025&#10;Day: Wednesday">May-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-22-2025&#10;Day: Thursday">May-22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-23-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">May-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-24-2025&#10;Day: Saturday">May-24</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-25-2025&#10;Day: Sunday">May-25</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: May-26-2025&#10;Day: Monday&#10;Holiday: Memorial Day">May-26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-27-2025&#10;Day: Tuesday">May-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-28-2025&#10;Day: Wednesday">May-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-29-2025&#10;Day: Thursday">May-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: May-30-2025&#10;Day: Friday">May-30</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: May-31-2025&#10;Day: Saturday&#10;Collections:&#10;- Recycling">May-31</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-01-2025&#10;Day: Sunday">Jun-01</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jun-02-2025&#10;Day: Monday&#10;Collections:&#10;- Trash">Jun-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-03-2025&#10;Day: Tuesday">Jun-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-04-2025&#10;Day: Wednesday">Jun-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-05-2025&#10;Day: Thursday">Jun-05</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jun-06-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jun-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-07-2025&#10;Day: Saturday">Jun-07</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-08-2025&#10;Day: Sunday">Jun-08</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jun-09-2025&#10;Day: Monday&#10;Collections:&#10;- Trash">Jun-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-10-2025&#10;Day: Tuesday">Jun-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-11-2025&#10;Day: Wednesday">Jun-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-12-2025&#10;Day: Thursday">Jun-12</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jun-13-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Jun-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-14-2025&#10;Day: Saturday">Jun-14</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-15-2025&#10;Day: Sunday">Jun-15</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jun-16-2025&#10;Day: Monday&#10;Collections:&#10;- Trash">Jun-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-17-2025&#10;Day: Tuesday">Jun-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-18-2025&#10;Day: Wednesday">Jun-18</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Jun-19-2025&#10;Day: Thursday&#10;Holiday: Juneteenth National Independence Day">Jun-19</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jun-20-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jun-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-21-2025&#10;Day: Saturday">Jun-21</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-22-2025&#10;Day: Sunday">Jun-22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-23-2025&#10;Day: Monday">Jun-23</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jun-24-2025&#10;Day: Tuesday&#10;Collections:&#10;- Trash">Jun-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-25-2025&#10;Day: Wednesday">Jun-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-26-2025&#10;Day: Thursday">Jun-26</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jun-27-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Jun-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-28-2025&#10;Day: Saturday">Jun-28</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-29-2025&#10;Day: Sunday">Jun-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jun-30-2025&#10;Day: Monday">Jun-30</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jul-01-2025&#10;Day: Tuesday&#10;Collections:&#10;- Trash">Jul-01</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-02-2025&#10;Day: Wednesday">Jul-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-03-2025&#10;Day: Thursday">Jul-03</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Jul-04-2025&#10;Day: Friday&#10;Holiday: Independence Day">Jul-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-05-2025&#10;Day: Saturday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jul-05</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-06-2025&#10;Day: Sunday">Jul-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-07-2025&#10;Day: Monday">Jul-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-08-2025&#10;Day: Tuesday">Jul-08</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jul-09-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Jul-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-10-2025&#10;Day: Thursday">Jul-10</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jul-11-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Jul-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-12-2025&#10;Day: Saturday">Jul-12</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-13-2025&#10;Day: Sunday">Jul-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-14-2025&#10;Day: Monday">Jul-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-15-2025&#10;Day: Tuesday">Jul-15</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jul-16-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Jul-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-17-2025&#10;Day: Thursday">Jul-17</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jul-18-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Jul-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-19-2025&#10;Day: Saturday">Jul-19</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-20-2025&#10;Day: Sunday">Jul-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-21-2025&#10;Day: Monday">Jul-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-22-2025&#10;Day: Tuesday">Jul-22</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jul-23-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Jul-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-24-2025&#10;Day: Thursday">Jul-24</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Jul-25-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Jul-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-26-2025&#10;Day: Saturday">Jul-26</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">31</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-27-2025&#10;Day: Sunday">Jul-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-28-2025&#10;Day: Monday">Jul-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-29-2025&#10;Day: Tuesday">Jul-29</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Jul-30-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Jul-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Jul-31-2025&#10;Day: Thursday">Jul-31</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-01-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Aug-01</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-02-2025&#10;Day: Saturday">Aug-02</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">32</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-03-2025&#10;Day: Sunday">Aug-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-04-2025&#10;Day: Monday">Aug-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-05-2025&#10;Day: Tuesday">Aug-05</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Aug-06-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Aug-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-07-2025&#10;Day: Thursday">Aug-07</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Aug-08-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Aug-08</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-09-2025&#10;Day: Saturday">Aug-09</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">33</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-10-2025&#10;Day: Sunday">Aug-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-11-2025&#10;Day: Monday">Aug-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-12-2025&#10;Day: Tuesday">Aug-12</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Aug-13-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Aug-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-14-2025&#10;Day: Thursday">Aug-14</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Aug-15-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Aug-15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-16-2025&#10;Day: Saturday">Aug-16</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">34</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-17-2025&#10;Day: Sunday">Aug-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-18-2025&#10;Day: Monday">Aug-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-19-2025&#10;Day: Tuesday">Aug-19</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Aug-20-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Aug-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-21-2025&#10;Day: Thursday">Aug-21</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Aug-22-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Aug-22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-23-2025&#10;Day: Saturday">Aug-23</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">35</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-24-2025&#10;Day: Sunday">Aug-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-25-2025&#10;Day: Monday">Aug-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-26-2025&#10;Day: Tuesday">Aug-26</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Aug-27-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Aug-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-28-2025&#10;Day: Thursday">Aug-28</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Aug-29-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Aug-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-30-2025&#10;Day: Saturday">Aug-30</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">36</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Aug-31-2025&#10;Day: Sunday">Aug-31</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Sep-01-2025&#10;Day: Monday&#10;Holiday: Labor Day">Sep-01</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-02-2025&#10;Day: Tuesday">Sep-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-03-2025&#10;Day: Wednesday">Sep-03</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Sep-04-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Sep-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-05-2025&#10;Day: Friday">Sep-05</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Sep-06-2025&#10;Day: Saturday&#10;Collections:&#10;- Recycling">Sep-06</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">37</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-07-2025&#10;Day: Sunday">Sep-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-08-2025&#10;Day: Monday">Sep-08</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-09-2025&#10;Day: Tuesday">Sep-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-10-2025&#10;Day: Wednesday">Sep-10</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Sep-11-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Sep-11</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Sep-12-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Sep-12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-13-2025&#10;Day: Saturday">Sep-13</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">38</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-14-2025&#10;Day: Sunday">Sep-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-15-2025&#10;Day: Monday">Sep-15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-16-2025&#10;Day: Tuesday">Sep-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-17-2025&#10;Day: Wednesday">Sep-17</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Sep-18-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Sep-18</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Sep-19-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Sep-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-20-2025&#10;Day: Saturday">Sep-20</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">39</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-21-2025&#10;Day: Sunday">Sep-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-22-2025&#10;Day: Monday">Sep-22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-23-2025&#10;Day: Tuesday">Sep-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-24-2025&#10;Day: Wednesday">Sep-24</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Sep-25-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Sep-25</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Sep-26-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Sep-26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-27-2025&#10;Day: Saturday">Sep-27</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">40</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-28-2025&#10;Day: Sunday">Sep-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-29-2025&#10;Day: Monday">Sep-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Sep-30-2025&#10;Day: Tuesday">Sep-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-01-2025&#10;Day: Wednesday">Oct-01</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Oct-02-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Oct-02</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Oct-03-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Oct-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-04-2025&#10;Day: Saturday">Oct-04</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">41</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-05-2025&#10;Day: Sunday">Oct-05</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-06-2025&#10;Day: Monday">Oct-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-07-2025&#10;Day: Tuesday">Oct-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-08-2025&#10;Day: Wednesday">Oct-08</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Oct-09-2025&#10;Day: Thursday&#10;Collections:&#10;- Trash">Oct-09</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Oct-10-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Oct-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-11-2025&#10;Day: Saturday">Oct-11</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">42</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-12-2025&#10;Day: Sunday">Oct-12</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Oct-13-2025&#10;Day: Monday&#10;Holiday: Columbus Day">Oct-13</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-14-2025&#10;Day: Tuesday">Oct-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-15-2025&#10;Day: Wednesday">Oct-15</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-16-2025&#10;Day: Thursday">Oct-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-17-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Oct-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-18-2025&#10;Day: Saturday">Oct-18</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">43</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-19-2025&#10;Day: Sunday">Oct-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-20-2025&#10;Day: Monday">Oct-20</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-21-2025&#10;Day: Tuesday">Oct-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-22-2025&#10;Day: Wednesday">Oct-22</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-23-2025&#10;Day: Thursday">Oct-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-24-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Oct-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-25-2025&#10;Day: Saturday">Oct-25</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">44</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-26-2025&#10;Day: Sunday">Oct-26</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-27-2025&#10;Day: Monday">Oct-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-28-2025&#10;Day: Tuesday">Oct-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-29-2025&#10;Day: Wednesday">Oct-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-30-2025&#10;Day: Thursday">Oct-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Oct-31-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling">Oct-31</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-01-2025&#10;Day: Saturday">Nov-01</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">45</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-02-2025&#10;Day: Sunday">Nov-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-03-2025&#10;Day: Monday">Nov-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-04-2025&#10;Day: Tuesday">Nov-04</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-05-2025&#10;Day: Wednesday">Nov-05</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-06-2025&#10;Day: Thursday">Nov-06</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-07-2025&#10;Day: Friday&#10;Collections:&#10;- Trash&#10;- Recycling&#10;- Yard Waste">Nov-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-08-2025&#10;Day: Saturday">Nov-08</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">46</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-09-2025&#10;Day: Sunday">Nov-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-10-2025&#10;Day: Monday">Nov-10</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Nov-11-2025&#10;Day: Tuesday&#10;Holiday: Veterans Day">Nov-11</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-12-2025&#10;Day: Wednesday">Nov-12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-13-2025&#10;Day: Thursday">Nov-13</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Nov-14-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Nov-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-15-2025&#10;Day: Saturday">Nov-15</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">47</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-16-2025&#10;Day: Sunday">Nov-16</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Nov-17-2025&#10;Day: Monday&#10;Collections:&#10;- Trash">Nov-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-18-2025&#10;Day: Tuesday">Nov-18</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-19-2025&#10;Day: Wednesday">Nov-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-20-2025&#10;Day: Thursday">Nov-20</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Nov-21-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Nov-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-22-2025&#10;Day: Saturday">Nov-22</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">48</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-23-2025&#10;Day: Sunday">Nov-23</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Nov-24-2025&#10;Day: Monday&#10;Collections:&#10;- Trash">Nov-24</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-25-2025&#10;Day: Tuesday">Nov-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-26-2025&#10;Day: Wednesday">Nov-26</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Nov-27-2025&#10;Day: Thursday&#10;Holiday: Thanksgiving">Nov-27</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-28-2025&#10;Day: Friday">Nov-28</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Nov-29-2025&#10;Day: Saturday&#10;Collections:&#10;- Recycling">Nov-29</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">49</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Nov-30-2025&#10;Day: Sunday">Nov-30</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-01-2025&#10;Day: Monday">Dec-01</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Dec-02-2025&#10;Day: Tuesday&#10;Collections:&#10;- Trash">Dec-02</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-03-2025&#10;Day: Wednesday">Dec-03</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-04-2025&#10;Day: Thursday">Dec-04</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Dec-05-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Dec-05</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-06-2025&#10;Day: Saturday">Dec-06</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">50</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-07-2025&#10;Day: Sunday">Dec-07</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-08-2025&#10;Day: Monday">Dec-08</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Dec-09-2025&#10;Day: Tuesday&#10;Collections:&#10;- Trash">Dec-09</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-10-2025&#10;Day: Wednesday">Dec-10</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-11-2025&#10;Day: Thursday">Dec-11</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Dec-12-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling">Dec-12</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-13-2025&#10;Day: Saturday">Dec-13</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">51</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-14-2025&#10;Day: Sunday">Dec-14</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-15-2025&#10;Day: Monday">Dec-15</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Dec-16-2025&#10;Day: Tuesday&#10;Collections:&#10;- Trash">Dec-16</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-17-2025&#10;Day: Wednesday">Dec-17</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-18-2025&#10;Day: Thursday">Dec-18</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Dec-19-2025&#10;Day: Friday&#10;Collections:&#10;- Recycling&#10;- Yard Waste">Dec-19</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-20-2025&#10;Day: Saturday">Dec-20</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">52</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-21-2025&#10;Day: Sunday">Dec-21</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-22-2025&#10;Day: Monday">Dec-22</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Dec-23-2025&#10;Day: Tuesday&#10;Collections:&#10;- Trash">Dec-23</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-24-2025&#10;Day: Wednesday">Dec-24</td>
+          <td style="background-color: #E0E0E0; text-align: center; color: #6F6F6F;" title="Date: Dec-25-2025&#10;Day: Thursday&#10;Holiday: Christmas Day">Dec-25</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-26-2025&#10;Day: Friday">Dec-26</td>
+          <td style="background-color: #007BFF; text-align: center; color: #E0E0E0;" title="Date: Dec-27-2025&#10;Day: Saturday&#10;Collections:&#10;- Recycling">Dec-27</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">53</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-28-2025&#10;Day: Sunday">Dec-28</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-29-2025&#10;Day: Monday">Dec-29</td>
+          <td style="background-color: #FFFFFF; text-align: center; color: #E0E0E0;" title="Date: Dec-30-2025&#10;Day: Tuesday">Dec-30</td>
+          <td style="background-color: #FF8000; text-align: center; color: #E0E0E0;" title="Date: Dec-31-2025&#10;Day: Wednesday&#10;Collections:&#10;- Trash">Dec-31</td>
+          <td style="text-align: center; color: #E0E0E0;" title=""> </td>
+          <td style="text-align: center; color: #E0E0E0;" title=""> </td>
+          <td style="text-align: center; color: #E0E0E0;" title=""> </td>
+        </tr>
+      </table>
+    </div>
+    <div class="key">
+        <h3>Key</h3>
+        <div class="key-item"><div class="key-color holiday"></div> Holiday</div>
+        <div class="key-item"><div class="key-color trash"></div> Trash</div>
+        <div class="key-item"><div class="key-color recycling"></div> Recycling</div>
+        <div class="key-item"><div class="key-color yardwaste"></div> Yard Waste</div>
+    </div>
+  
+  <div class="tooltip" id="tooltip"></div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Modal handling for the info modal
+      const modal = document.getElementById("infoModal");
+      const closeModal = document.getElementById("closeModal");
+      const pageTitle = document.getElementById("pageTitle");
+  
+      // Open the info modal when the page loads
+      modal.style.display = "block";
+  
+      closeModal.onclick = function () {
+        modal.style.display = "none";
+      };
+  
+      window.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+  
+      pageTitle.onclick = function () {
+        modal.style.display = "block";
+      };
+  
+      // Set up the tooltip as a popup window with close button styling
+      const tooltip = document.getElementById("tooltip");
+      tooltip.style.position = "fixed";
+      tooltip.style.backgroundColor = "white";
+      tooltip.style.border = "1px solid #888";
+      tooltip.style.padding = "20px";
+      tooltip.style.width = "300px";
+      tooltip.style.zIndex = "2";
+      tooltip.style.display = "none";
+      tooltip.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.5)";
+      tooltip.style.borderRadius = "5px";
+  
+      // Create a close button for the tooltip (only created once)
+      const closeTooltipBtn = document.createElement("span");
+      closeTooltipBtn.innerHTML = "&times;";
+      closeTooltipBtn.style.float = "right";
+      closeTooltipBtn.style.cursor = "pointer";
+      closeTooltipBtn.style.fontSize = "20px";
+      closeTooltipBtn.style.marginBottom = "10px";
+      closeTooltipBtn.addEventListener("click", function () {
+        tooltip.style.display = "none";
+      });
+  
+      // Function to update table cells and attach tooltip event listeners
+      function updateCells() {
+        const cells = document.querySelectorAll("td[title]");
+        cells.forEach(cell => {
+          // Reset cell inline styles
+          cell.style.backgroundColor = "";
+          cell.style.color = "";
+  
+          // Save the original date text and clear the cell content
+          const originalDate = cell.textContent.trim();
+          cell.innerHTML = "";
+  
+          // Append the date text element
+          const dateElem = document.createElement("div");
+          dateElem.className = "cell-date";
+          dateElem.textContent = originalDate;
+          cell.appendChild(dateElem);
+  
+          // Create the 12-segment color bar container
+          const colorBar = document.createElement("div");
+          colorBar.className = "color-bar";
+  
+          // Process the title attribute for event details
+          const title = cell.getAttribute("title");
+          let activeEvents = [];
+          if (title && title.includes("Holiday:")) {
+            activeEvents.push({ name: "holiday", color: "#87CEFA" }); // Light Blue
+          }
+          if (title && title.includes("- Trash")) {
+            activeEvents.push({ name: "trash", color: "#0000FF" }); // Dark Blue
+          }
+          if (title && title.includes("- Recycling")) {
+            activeEvents.push({ name: "recycling", color: "#8B0000" }); // Dark Red
+          }
+          if (title && title.includes("- Yard Waste")) {
+            activeEvents.push({ name: "yardwaste", color: "#FFA07A" }); // Light Red
+          }
+  
+          let colors = [];
+          if (activeEvents.length > 0) {
+            const boxesPerEvent = Math.floor(12 / activeEvents.length);
+            const order = ["holiday", "trash", "recycling", "yardwaste"];
+            order.forEach(eventName => {
+              const ev = activeEvents.find(e => e.name === eventName);
+              if (ev) {
+                for (let i = 0; i < boxesPerEvent; i++) {
+                  colors.push(ev.color);
+                }
+              }
+            });
+          } else {
+            for (let i = 0; i < 12; i++) {
+              colors.push("transparent");
+            }
+          }
+  
+          // Create and append each subbox for the color bar
+          colors.forEach(color => {
+            const subbox = document.createElement("div");
+            subbox.className = "subbox";
+            subbox.style.backgroundColor = color;
+            colorBar.appendChild(subbox);
+          });
+          cell.appendChild(colorBar);
+  
+          // Attach a click listener to the cell to show the tooltip popup
+          cell.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent bubbling to the document listener
+  
+            // Clear and rebuild the tooltip content
+            tooltip.innerHTML = "";
+            tooltip.appendChild(closeTooltipBtn); // attach the close button
+            let content = title ? title.replace(/&#10;/g, "<br>") : "";
+            let contentDiv = document.createElement("div");
+            contentDiv.innerHTML = content;
+            tooltip.appendChild(contentDiv);
+  
+            // Display the tooltip popup
+            tooltip.style.display = "block";
+  
+            // Position the tooltip just above the clicked cell
+            let rect = this.getBoundingClientRect();
+            const margin = 5; // 5px margin above the cell
+            // Ensure tooltip dimensions are known
+            let tooltipWidth = tooltip.offsetWidth;
+            let tooltipHeight = tooltip.offsetHeight;
+            tooltip.style.left = rect.left + (rect.width / 2) - (tooltipWidth / 2) + "px";
+            tooltip.style.top = rect.top - tooltipHeight - margin + "px";
+          });
+        });
+      }
+  
+      // Hide tooltip when clicking outside a table cell
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("td[title]")) {
+          tooltip.style.display = "none";
+        }
+      });
+  
+      updateCells(); // Build table cells and attach tooltip listeners
+    });
+  </script>
+  
+  
+  
+</body>
+</html>
