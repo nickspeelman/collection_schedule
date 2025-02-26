@@ -13,12 +13,36 @@
                   margin: 0;
                   padding: 0;
             }
+           /* Ensure the title is centered */
+            #pageTitle {
+                text-align: center;
+                width: 100%;
+                padding: 10px 0;
+                font-size: 24px;
+                font-weight: bold;
+                color: #4B4B4B;
+                cursor: pointer;
+              }
+            .sticky-header {
+              position: sticky;
+              top: 0;
+              z-index: 20;
+              background-color: #ffffff; /* Solid white background */
+              width: 100%; /* Full width to prevent gaps */
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* Ensures children (title & key) are centered */
+              text-align: center;
+              box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds shadow to separate it visually */
+            }
             .container {
               display: flex;
               flex-direction: column;  /* Stack key and table vertically */
               align-items: stretch;
               width: 80%;
               margin: 0 auto;  /* Center container horizontally */
+              background-color: #ffffff; /* solid white */
+              opacity: 1;
           }
             /* Make the table wrapper take full width */
             .table-wrapper {
@@ -27,11 +51,11 @@
             }
          /* Center the key by adding auto margins and centering its items */
           .key {
-              display: flex;
-              gap: 20px;          /* Space between key items */
-              flex-wrap: wrap;    /* Allows wrapping on mobile */
-              justify-content: center;
-              margin: 0 auto;     /* Center the key container */
+            gap: 5px;
+            z-index: 9;
+            padding: 5px 0;
+            display: flex;
+            justify-content: center;
           }
 
           /* Center the table inside its container */
@@ -98,7 +122,7 @@
                 margin: 15% auto;
                 padding: 20px;
                 border: 1px solid #888;
-                width: 50%;
+                width: 80%;
                 text-align: center;
                 font-size: 16px;
             }
@@ -114,11 +138,24 @@
                 text-decoration: none;
                 cursor: pointer;
             }
-            .key-container {
-                width: 100%;
-                margin-bottom: 10px;  /* Spacing between the key and the table */
-                display: flex;
-                justify-content: center;
+                /* Keep the key centered */
+          .key-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+            background-color: #ffffff;
+            width: 100%;
+          }
+
+            /* Make the table header row sticky */
+            /* Sticky Table Header */
+              /* Fix header row positioning */
+            thead {
+                position: sticky;
+                top: 80px; /* Adjusted to account for sticky title & key */
+                z-index: 17; /* Ensure it's above dimming overlay */
+                background-color: #ADD8E6; /* Ensure it has a solid background */
             }
             .key-item {
                 display: flex;
@@ -137,6 +174,34 @@
             .text-trash { color: #0000FF; font-weight: bold; }  /* Dark Blue */
             .text-recycling { color: #8B0000; font-weight: bold; } /* Dark Red */
             .text-yardwaste { color: #FFA07A; font-weight: bold; } /* Light Red */
+
+        /* Dimming effect when modal is open */
+        .dimmed {
+            position: relative;
+        }
+
+        .dimmed::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+            z-index: 15;
+        }
+
+        /* Ensure sticky elements (title, key, table header) respect dimming */
+        .dimmed .sticky-header,
+        .dimmed thead {
+            background: rgba(255, 255, 255, 0.85); /* Slightly opaque white */
+            backdrop-filter: blur(3px); /* Subtle blur effect */
+            z-index: 16;
+        }
+        /* Keep modal above the dimming layer */
+        .modal {
+            z-index: 20;
+        }
         </style>
     </head>
 
@@ -160,23 +225,25 @@
     </div>
   </div>
   
-  <div class="title" id="pageTitle"><u>Nick & Michele's Bonkers 2025 Collection Schedule</u></div>
-  
-  <div class="container">
-    <div class="key">
-      <p>
+  <div class="sticky-header">
+    <div id="pageTitle"><u>Nick & Michele's Bonkers 2025 Collection Schedule</u></div>
+    <div class="key-container">
         <div class="key-item"><div class="key-color holiday"></div> Holiday</div>
         <div class="key-item"><div class="key-color trash"></div> Trash</div>
         <div class="key-item"><div class="key-color recycling"></div> Recycling</div>
         <div class="key-item"><div class="key-color yardwaste"></div> Yard Waste</div>
-      </p>
-   </div>
+    </div>
+</div>
+
     <div class="table-wrapper">
       <table>
-        <tr>
-          <th>Week</th>
-          <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr>
           <td style="font-weight: bold; background-color: #ADD8E6; color: #4B4B4B;">1</td>
           <td style="text-align: center; color: #E0E0E0;" title=""> </td>
@@ -707,6 +774,7 @@
           <td style="text-align: center; color: #E0E0E0;" title=""> </td>
           <td style="text-align: center; color: #E0E0E0;" title=""> </td>
         </tr>
+      </tbody>
       </table>
     </div>
   </div>
@@ -716,154 +784,147 @@
   
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Modal handling for the info modal
-      const modal = document.getElementById("infoModal");
-      const closeModal = document.getElementById("closeModal");
-      const pageTitle = document.getElementById("pageTitle");
-  
-      // Open the info modal when the page loads
-      modal.style.display = "block";
-  
-      closeModal.onclick = function () {
-        modal.style.display = "none";
-      };
-  
-      window.onclick = function (event) {
-        if (event.target === modal) {
-          modal.style.display = "none";
+        // Get modal elements
+        const modal = document.getElementById("infoModal");
+        const closeModal = document.getElementById("closeModal");
+        const pageTitle = document.getElementById("pageTitle");
+        const body = document.body;
+        
+        function openModal() {
+            modal.style.display = "block";
+            body.classList.add("dimmed");  // Dim everything except modal
         }
-      };
-  
-      pageTitle.onclick = function () {
-        modal.style.display = "block";
-      };
-  
-      // Set up the tooltip as a popup window with close button styling
-      const tooltip = document.getElementById("tooltip");
-      tooltip.style.position = "fixed";
-      tooltip.style.backgroundColor = "white";
-      tooltip.style.border = "1px solid #888";
-      tooltip.style.padding = "20px";
-      tooltip.style.width = "300px";
-      tooltip.style.zIndex = "2";
-      tooltip.style.display = "none";
-      tooltip.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.5)";
-      tooltip.style.borderRadius = "5px";
-  
-      // Create a close button for the tooltip (only created once)
-      const closeTooltipBtn = document.createElement("span");
-      closeTooltipBtn.innerHTML = "&times;";
-      closeTooltipBtn.style.float = "right";
-      closeTooltipBtn.style.cursor = "pointer";
-      closeTooltipBtn.style.fontSize = "20px";
-      closeTooltipBtn.style.marginBottom = "10px";
-      closeTooltipBtn.addEventListener("click", function () {
-        tooltip.style.display = "none";
-      });
-  
-      // Function to update table cells and attach tooltip event listeners
-      function updateCells() {
-        const cells = document.querySelectorAll("td[title]");
-        cells.forEach(cell => {
-          // Reset cell inline styles
-          cell.style.backgroundColor = "";
-          cell.style.color = "";
-  
-          // Save the original date text and clear the cell content
-          const originalDate = cell.textContent.trim();
-          cell.innerHTML = "";
-  
-          // Append the date text element
-          const dateElem = document.createElement("div");
-          dateElem.className = "cell-date";
-          dateElem.textContent = originalDate;
-          cell.appendChild(dateElem);
-  
-          // Create the 12-segment color bar container
-          const colorBar = document.createElement("div");
-          colorBar.className = "color-bar";
-  
-          // Process the title attribute for event details
-          const title = cell.getAttribute("title");
-          let activeEvents = [];
-          if (title && title.includes("Holiday:")) {
-            activeEvents.push({ name: "holiday", color: "#87CEFA" }); // Light Blue
-          }
-          if (title && title.includes("- Trash")) {
-            activeEvents.push({ name: "trash", color: "#0000FF" }); // Dark Blue
-          }
-          if (title && title.includes("- Recycling")) {
-            activeEvents.push({ name: "recycling", color: "#8B0000" }); // Dark Red
-          }
-          if (title && title.includes("- Yard Waste")) {
-            activeEvents.push({ name: "yardwaste", color: "#FFA07A" }); // Light Red
-          }
-  
-          let colors = [];
-          if (activeEvents.length > 0) {
-            const boxesPerEvent = Math.floor(12 / activeEvents.length);
-            const order = ["holiday", "trash", "recycling", "yardwaste"];
-            order.forEach(eventName => {
-              const ev = activeEvents.find(e => e.name === eventName);
-              if (ev) {
-                for (let i = 0; i < boxesPerEvent; i++) {
-                  colors.push(ev.color);
-                }
-              }
-            });
-          } else {
-            for (let i = 0; i < 12; i++) {
-              colors.push("transparent");
+    
+        function closeModalFunc() {
+            modal.style.display = "none";
+            body.classList.remove("dimmed");  // Remove dimming effect
+        }
+    
+        // Open modal on load
+        openModal();
+    
+        closeModal.onclick = closeModalFunc;
+    
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                closeModalFunc();
             }
-          }
-  
-          // Create and append each subbox for the color bar
-          colors.forEach(color => {
-            const subbox = document.createElement("div");
-            subbox.className = "subbox";
-            subbox.style.backgroundColor = color;
-            colorBar.appendChild(subbox);
-          });
-          cell.appendChild(colorBar);
-  
-          // Attach a click listener to the cell to show the tooltip popup
-          cell.addEventListener("click", function (event) {
-            event.stopPropagation(); // Prevent bubbling to the document listener
-  
-            // Clear and rebuild the tooltip content
-            tooltip.innerHTML = "";
-            tooltip.appendChild(closeTooltipBtn); // attach the close button
-            let content = title ? title.replace(/&#10;/g, "<br>") : "";
-            let contentDiv = document.createElement("div");
-            contentDiv.innerHTML = content;
-            tooltip.appendChild(contentDiv);
-  
-            // Display the tooltip popup
-            tooltip.style.display = "block";
-  
-            // Position the tooltip just above the clicked cell
-            let rect = this.getBoundingClientRect();
-            const margin = 5; // 5px margin above the cell
-            // Ensure tooltip dimensions are known
-            let tooltipWidth = tooltip.offsetWidth;
-            let tooltipHeight = tooltip.offsetHeight;
-            tooltip.style.left = rect.left + (rect.width / 2) - (tooltipWidth / 2) + "px";
-            tooltip.style.top = rect.top - tooltipHeight - margin + "px";
-          });
+        };
+    
+        pageTitle.onclick = openModal;
+    
+        // Tooltip setup
+        const tooltip = document.getElementById("tooltip");
+        tooltip.style.position = "fixed";
+        tooltip.style.backgroundColor = "white";
+        tooltip.style.border = "1px solid #888";
+        tooltip.style.padding = "20px";
+        tooltip.style.width = "300px";
+        tooltip.style.zIndex = "2";
+        tooltip.style.display = "none";
+        tooltip.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.5)";
+        tooltip.style.borderRadius = "5px";
+    
+        const closeTooltipBtn = document.createElement("span");
+        closeTooltipBtn.innerHTML = "&times;";
+        closeTooltipBtn.style.float = "right";
+        closeTooltipBtn.style.cursor = "pointer";
+        closeTooltipBtn.style.fontSize = "20px";
+        closeTooltipBtn.style.marginBottom = "10px";
+        closeTooltipBtn.addEventListener("click", function () {
+            tooltip.style.display = "none";
         });
-      }
-  
-      // Hide tooltip when clicking outside a table cell
-      document.addEventListener("click", function (event) {
-        if (!event.target.closest("td[title]")) {
-          tooltip.style.display = "none";
+    
+        function updateCells() {
+            const cells = document.querySelectorAll("td[title]");
+            cells.forEach(cell => {
+                cell.style.backgroundColor = "";
+                cell.style.color = "";
+    
+                const originalDate = cell.textContent.trim();
+                cell.innerHTML = "";
+    
+                const dateElem = document.createElement("div");
+                dateElem.className = "cell-date";
+                dateElem.textContent = originalDate;
+                cell.appendChild(dateElem);
+    
+                const colorBar = document.createElement("div");
+                colorBar.className = "color-bar";
+    
+                const title = cell.getAttribute("title");
+                let activeEvents = [];
+                if (title && title.includes("Holiday:")) {
+                    activeEvents.push({ name: "holiday", color: "#87CEFA" });
+                }
+                if (title && title.includes("- Trash")) {
+                    activeEvents.push({ name: "trash", color: "#0000FF" });
+                }
+                if (title && title.includes("- Recycling")) {
+                    activeEvents.push({ name: "recycling", color: "#8B0000" });
+                }
+                if (title && title.includes("- Yard Waste")) {
+                    activeEvents.push({ name: "yardwaste", color: "#FFA07A" });
+                }
+    
+                let colors = [];
+                if (activeEvents.length > 0) {
+                    const boxesPerEvent = Math.floor(12 / activeEvents.length);
+                    const order = ["holiday", "trash", "recycling", "yardwaste"];
+                    order.forEach(eventName => {
+                        const ev = activeEvents.find(e => e.name === eventName);
+                        if (ev) {
+                            for (let i = 0; i < boxesPerEvent; i++) {
+                                colors.push(ev.color);
+                            }
+                        }
+                    });
+                } else {
+                    for (let i = 0; i < 12; i++) {
+                        colors.push("transparent");
+                    }
+                }
+    
+                colors.forEach(color => {
+                    const subbox = document.createElement("div");
+                    subbox.className = "subbox";
+                    subbox.style.backgroundColor = color;
+                    colorBar.appendChild(subbox);
+                });
+                cell.appendChild(colorBar);
+    
+                cell.addEventListener("click", function (event) {
+                    event.stopPropagation();
+    
+                    tooltip.innerHTML = "";
+                    tooltip.appendChild(closeTooltipBtn);
+                    let content = title ? title.replace(/&#10;/g, "<br>") : "";
+                    let contentDiv = document.createElement("div");
+                    contentDiv.innerHTML = content;
+                    tooltip.appendChild(contentDiv);
+    
+                    tooltip.style.display = "block";
+    
+                    let rect = this.getBoundingClientRect();
+                    const margin = 5;
+                    let tooltipWidth = tooltip.offsetWidth;
+                    let tooltipHeight = tooltip.offsetHeight;
+                    tooltip.style.left = rect.left + (rect.width / 2) - (tooltipWidth / 2) + "px";
+                    tooltip.style.top = rect.top - tooltipHeight - margin + "px";
+                });
+            });
         }
-      });
-  
-      updateCells(); // Build table cells and attach tooltip listeners
+    
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest("td[title]")) {
+                tooltip.style.display = "none";
+            }
+        });
+    
+        updateCells();
     });
-  </script>
-  
+    </script>
+    
   
   
 </body>
