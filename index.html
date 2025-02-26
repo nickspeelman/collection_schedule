@@ -6,49 +6,59 @@
         <title>Nick & Michele's Bonkers 2025 Collection Schedule</title>
         <style>
             body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
             }
             .container {
-                display: flex;
-                justify-content: space-between;
-                width: 80%;
-                max-width: 1200px;
-                margin: 20px auto;
-            }
+              display: flex;
+              flex-direction: column;  /* Stack key and table vertically */
+              align-items: stretch;
+              width: 80%;
+              margin: 0 auto;  /* Center container horizontally */
+          }
+            /* Make the table wrapper take full width */
             .table-wrapper {
-                flex: 0 0 80%;
-                margin-right: 20px;
-            }
-            .key {
-                flex: 0 0 15%;
-                font-size: 14px;
-            }
-            table {
-                border-collapse: collapse;
                 width: 100%;
+                margin-right: 0;
             }
-            td, th {
-                border: 1px solid #ADD8E6;
-                padding: 5px;
-                text-align: center;
-                position: relative;
-                cursor: pointer;
-            }
-            th {
-                background-color: #ADD8E6;
-                color: #4B4B4B;
-                font-weight: bold;
-            }
-            th, td:first-child {
-                background-color: #D3D3D3 !important; /* Light Grey */
-                color: #4B4B4B !important; /* Darker text for contrast */
-                font-weight: bold;
-            }
+         /* Center the key by adding auto margins and centering its items */
+          .key {
+              display: flex;
+              gap: 20px;          /* Space between key items */
+              flex-wrap: wrap;    /* Allows wrapping on mobile */
+              justify-content: center;
+              margin: 0 auto;     /* Center the key container */
+          }
+
+          /* Center the table inside its container */
+          table {
+              border-collapse: collapse;
+              width: 80%;
+              margin: 0 auto;     /* Center the table */
+          }
+
+          td, th {
+              border: 1px solid #ADD8E6;
+              padding: 5px;
+              text-align: center;
+              position: relative;
+              cursor: pointer;
+          }
+          th {
+              background-color: #ADD8E6;
+              color: #4B4B4B;
+              font-weight: bold;
+          }
+          th, td:first-child {
+              background-color: #D3D3D3 !important; /* Light Grey */
+              color: #4B4B4B !important;            /* Darker text for contrast */
+              font-weight: bold;
+          }
+
 
             .title {
                 margin: 20px 0;
@@ -104,10 +114,16 @@
                 text-decoration: none;
                 cursor: pointer;
             }
+            .key-container {
+                width: 100%;
+                margin-bottom: 10px;  /* Spacing between the key and the table */
+                display: flex;
+                justify-content: center;
+            }
             .key-item {
                 display: flex;
                 align-items: center;
-                margin-bottom: 10px;
+                font-size: 14px;
             }
             .key-color {
                 display: inline-block;
@@ -147,6 +163,14 @@
   <div class="title" id="pageTitle"><u>Nick & Michele's Bonkers 2025 Collection Schedule</u></div>
   
   <div class="container">
+    <div class="key">
+      <p>
+        <div class="key-item"><div class="key-color holiday"></div> Holiday</div>
+        <div class="key-item"><div class="key-color trash"></div> Trash</div>
+        <div class="key-item"><div class="key-color recycling"></div> Recycling</div>
+        <div class="key-item"><div class="key-color yardwaste"></div> Yard Waste</div>
+      </p>
+   </div>
     <div class="table-wrapper">
       <table>
         <tr>
@@ -685,13 +709,8 @@
         </tr>
       </table>
     </div>
-    <div class="key">
-        <h3>Key</h3>
-        <div class="key-item"><div class="key-color holiday"></div> Holiday</div>
-        <div class="key-item"><div class="key-color trash"></div> Trash</div>
-        <div class="key-item"><div class="key-color recycling"></div> Recycling</div>
-        <div class="key-item"><div class="key-color yardwaste"></div> Yard Waste</div>
-    </div>
+  </div>
+  
   
   <div class="tooltip" id="tooltip"></div>
   
