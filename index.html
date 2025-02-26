@@ -202,6 +202,17 @@
         .modal {
             z-index: 20;
         }
+
+        .key-table {
+        width: 70%;
+        max-width: 600px; /* Adjust as needed */
+        border-collapse: collapse;
+        margin-top: 10px;
+        }
+        .key-table td {
+            padding: 5px 10px;
+            vertical-align: middle;
+        }
         </style>
     </head>
 
@@ -211,16 +222,33 @@
       <span class="close" id="closeModal">&times;</span>
       <div style="text-align: left;">
         <h3>Refuse Collection Is Confusing!</h3>
-        <p>Tracking refuse collection in our neighborhood is difficult. Trash, recycling, and yard waste each follow different rules for holiday shifts, and they don’t always observe the same holidays.</p> 
-        <p>Each cell represents a single day in 2025, with holidays and collection days color-coded. Below the date, a bar visually represents scheduled collections:                 
-        <ul>
-            <li><span class="key-color holiday"></span> <strong>Light Blue</strong> → Holidays</li>
-            <li><span class="key-color trash"></span> <strong>Dark Blue</strong> → Trash</li>
-            <li><span class="key-color recycling"></span> <strong>Dark Red</strong> → Recycling</li>
-            <li><span class="key-color yardwaste"></span> <strong>Light Red</strong> → Yard Waste</li>
-        </ul> 
-        <p>If multiple collections fall on the same day, the bar is divided proportionally to show each collection type. If only one collection type occurs, the entire bar is filled with that color.</p> 
-        <p>Click any cell to view additional details. Click the title at the top to reopen this explanation.</p>
+        <p>Tracking refuse collection in our neighborhood is a challenge. Trash, recycling, and yard waste pickup schedules shift around holidays, but not in the same way or on the same holidays. The result? An ever-changing collection calendar that leads to confusion and missed pickups.</p>
+        <p>Each cell represents a single day in 2025, with holidays and collection days color-coded. Below the date, a bar provides a visual representation of the scheduled collections:                
+        <table class="key-table">
+          <tr>
+              <td><span class="key-color holiday"></span></td>
+              <td><strong>Light Blue</strong></td>
+              <td>Holiday (May Affect Collection Days)</td>
+          </tr>
+          <tr>
+              <td><span class="key-color trash"></span></td>
+              <td><strong>Dark Blue</strong></td>
+              <td>Trash</td>
+          </tr>
+          <tr>
+              <td><span class="key-color recycling"></span></td>
+              <td><strong>Dark Red</strong></td>
+              <td>Recycling</td>
+          </tr>
+          <tr>
+              <td><span class="key-color yardwaste"></span></td>
+              <td><strong>Light Red</strong></td>
+              <td>Yard Waste</td>
+          </tr>
+      </table>
+        </p>
+        <p>If multiple collections occur on the same day, the bar is divided proportionally to represent each collection type. If only one collection type is scheduled, the bar is filled entirely with its corresponding color.</p> 
+        <p>Click any cell to view more details. Click the title at the top to revisit this explanation./p>
       </div>
     </div>
   </div>
